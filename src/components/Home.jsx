@@ -24,9 +24,15 @@ function Home() {
     
   }
 
-  // const deleteItem = (id) => {
-   
-  // }
+  const deleteItem = (idx) => {
+    
+      setList((oldValue) => {
+         return oldValue.filter((currVal, id) => {
+           return idx !== id
+         })
+        })
+    
+  }
 
   return (
     <>
@@ -43,15 +49,10 @@ function Home() {
             <li>
               {val}
               <button>status</button>
-              {/* <DeleteBtn name={val} key={idx} onSelect={deleteItem}/> */}
-              <button onClick={() => {
-                 setList((oldValue) => {
-                    return oldValue.filter((currVal, id) => {
-                      return idx !== id
-                    })
-                  })
+              <DeleteBtn name={val} key={idx} id={idx} onSelect={deleteItem}/>
+              
 
-              }} >Delete</button>
+               {/* >Delete</button> */}
             </li>
           )
         })}
