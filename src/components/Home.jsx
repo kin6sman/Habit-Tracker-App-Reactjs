@@ -1,11 +1,21 @@
 import React, { useState } from 'react'
 import DeleteBtn from './DeleteBtn'
+import { useSelector } from 'react-redux';
+
+import { useDispatch } from 'react-redux';
+import { addHabit, deleteHabit } from '../store/habitSlice';
+
 
 
 
 
 function Home() {
 
+  const dispatch = useDispatch();
+
+  const habits = useSelector((state) => state.habits);
+
+  console.log("store: " + habits);
   
   const [item, setItem] = useState('');
   const [list, setList] = useState([]);
@@ -16,6 +26,10 @@ function Home() {
   } 
 
   const handledClick = (e) => {
+    e.preventDefault();
+
+    dispatch(addHabit(item))
+
     if(e.target.innerText === 'Add'){
       setList((preValue) => {
         return [...preValue, item]
@@ -27,11 +41,12 @@ function Home() {
 
   const deleteItem = (idx) => {
     
-      setList((oldValue) => {
-         return oldValue.filter((currVal, id) => {
-           return idx !== id
-         })
-        })
+    dispatch(deleteHabit(idx));
+      // setList((oldValue) => {
+      //    return oldValue.filter((currVal, id) => {
+      //      return idx !== id
+      //    })
+      //   })
     
   }
 
@@ -44,13 +59,15 @@ function Home() {
       </div>
       <div>
 
-        {list.map((val, idx) => {
+        {habits.map((val, idx) => {
           return (
             // eslint-disable-next-line react/jsx-key
-            <li>
+            <li key={idx}>
               {val}
               <button>status</button>
-              <DeleteBtn name={val} key={idx} id={idx} onSelect={deleteItem}/>
+              {/* <DeleteBtn name={val} key={idx} id={idx} onSelect={deleteItem}/> */}
+
+              <button onClick={() => deleteItem(idx)}>Delete</button>
               
 
                {/* >Delete</button> */}
