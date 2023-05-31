@@ -1,8 +1,12 @@
-import React from 'react'
+import { Nav, Container } from 'react-bootstrap'
 
 const Header = () => {
   return (
-    <div>Header</div>
+    <Nav className='bg-primary p-2'>
+      <Container>
+        <h3 className='fw-bold'>Ninja Habits</h3>
+      </Container>
+    </Nav>
   )
 }
 
