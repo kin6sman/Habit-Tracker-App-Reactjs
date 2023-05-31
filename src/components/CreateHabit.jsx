@@ -4,6 +4,8 @@ import { Model, Button, Form } from 'react-bootstrap'
 import { useDispatch } from 'react-redux';
 import { addHabit } from '../features/habitSlice';
 import { habits } from '../App'
+// import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const CreateHabit = (props) => {
 
