@@ -1,33 +1,14 @@
 import React from 'react'
-
+import Home from './components/Home'
 import './App.css'
 import Header from './components/Header'
-import Overview from './components/Overview'
-import Details from './components/Details'
-import { Row, Col, Container } from 'react-bootstrap'
-import CreateHabit from './components/CreateHabit'
-
-
-var habits = []
-export { habits}
-
 
 function App() {
   return (
-    <>
-    <Header />
-    <CreateHabit/>
-    <Container>
-      <Row className='mt-5'>
-        <Col md={3}>
-          <Overview />
-        </Col>
-        <Col md={9}>
-          <Details />
-        </Col>
-      </Row>
-    </Container>
-  </>
+    <div className='main-container'>
+      <Header/>
+      <Home/>
+    </div>
   )
 }
 
