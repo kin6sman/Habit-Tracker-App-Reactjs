@@ -1,15 +1,12 @@
-import { Nav, Container } from 'react-bootstrap'
+import React from 'react';
+import './Header.css';
 
 const Header = () => {
-  const date = new Date()
   return (
-    <Nav className='bg-primary p-2 background'>
-      <Container className='d-flex justify-content-between align-items-center'>
-        <h3 className='fw-bold'>Ninja Habits</h3>
-        <span>{date.toDateString()}</span>
-      </Container>
-    </Nav>
-  )
-}
+    <header className="header">
+      <h1 className="header-title">Habit Tracker</h1>
+    </header>
+  );
+};
 
-export default Header
+export default Header;

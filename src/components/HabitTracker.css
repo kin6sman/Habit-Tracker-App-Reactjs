@@ -1,0 +1,96 @@
+.habit-tracker {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.habit-tracker-title {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.habit-input {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.habit-input-field {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.habit-add-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #2ecc71;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.habit-list {
+  list-style: none;
+  padding: 0;
+}
+
+.habit-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.habit-name {
+  flex: 1;
+  font-size: 16px;
+}
+
+.habit-name.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.delete-btn {
+  padding: 6px 12px;
+  font-size: 14px;
+  background-color: #f5f5f5;
+  color: #333;
+  border: none;
+  border-radius: 4px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.weekly-status {
+  margin-top: 10px;
+}
+
+.weekly-status h3 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.status-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.status-btn {
+  padding: 6px 12px;
+  font-size: 14px;
+  background-color: #f5f5f5;
+  color: #333;
+  border: none;
+  border-radius: 4px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.status-btn.completed {
+  background-color: #2ecc71;
+  color: #fff;
+}

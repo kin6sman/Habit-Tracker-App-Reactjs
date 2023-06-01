@@ -1,0 +1,53 @@
+.weekly-status {
+  margin-top: 20px;
+}
+
+.accordion {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
+
+.accordion-title {
+  margin: 0;
+  flex: 1;
+}
+
+.accordion-icon {
+  width: 12px;
+  height: 12px;
+  border: solid #888;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  transition: transform 0.2s ease-in-out;
+}
+
+.expanded {
+  transform: rotate(135deg);
+}
+
+.status-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.status-btn {
+  padding: 6px 12px;
+  font-size: 14px;
+  background-color: #f5f5f5;
+  color: #333;
+  border: none;
+  border-radius: 4px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.status-btn.completed {
+  background-color: #2ecc71;
+  color: #fff;
+}
