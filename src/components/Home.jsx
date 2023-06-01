@@ -8,12 +8,17 @@ import './HabitTracker.css';
 import { Typography, TextField, Button, List, ListItem, IconButton, Grid } from '@mui/material';
 import { Delete } from '@mui/icons-material';
 
+  
 const HabitTracker = () => {
+
+  // Retrieve habits state from the Redux store
   const habits = useSelector((state) => state.habits);
   const dispatch = useDispatch();
   const [newHabit, setNewHabit] = useState('');
 
   const handleAddHabit = () => {
+
+        // Add a new habit to the Redux store if the input is not empty
     if (newHabit.trim() !== '') {
       dispatch(addHabit(newHabit));
       setNewHabit('');
@@ -21,10 +26,14 @@ const HabitTracker = () => {
   };
 
   const handleDeleteHabit = (habitIndex) => {
+
+        // Delete a habit from the Redux store
     dispatch(deleteHabit(habitIndex));
   };
 
   const handleToggleHabitStatus = (habitIndex, dayIndex) => {
+        // Toggle the status of a habit for a specific day
+
     dispatch(toggleHabitStatus({ habitIndex, dayIndex }));
   };
 
@@ -33,6 +42,8 @@ const HabitTracker = () => {
       <Typography variant="h4" gutterBottom>
         
       </Typography>
+
+      {/* Add habit input */}
       <Grid container spacing={2} alignItems="center" className='gridTextBox'>
         <Grid item xs={12} md={8}>
           <TextField
@@ -51,6 +62,8 @@ const HabitTracker = () => {
           </Button>
         </Grid>
       </Grid>
+
+      {/* habit list */}
       <List style={{ marginTop: '10px' }}>
         {habits.map((habit, habitIndex) => (
           <ListItem key={habitIndex} style={{ marginBottom: '10px' }}>
@@ -67,6 +80,8 @@ const HabitTracker = () => {
                   {habit.name}
                 </Typography>
               </Grid>
+
+              {/* weekly status  */}
               <Grid item xs={6} sm={2}>
                 <WeeklyStatus
                   habitIndex={habitIndex}
@@ -74,6 +89,8 @@ const HabitTracker = () => {
                   toggleHabitStatus={handleToggleHabitStatus}
                 />
               </Grid>
+
+              {/* delete button  */}
               <Grid item xs={6} sm={2}>
                 <IconButton onClick={() => handleDeleteHabit(habitIndex)} color="secondary">
                   <Delete />
