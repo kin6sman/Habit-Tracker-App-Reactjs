@@ -1,6 +1,7 @@
-.app {
+body {
   /* max-width: 600px; */
-  width: 800px;
+  width: 70vw;
   margin: 0 auto;
   padding: 20px;
+  background-color: rgb(242, 236, 236);
 }
